@@ -27,7 +27,8 @@ plot4 <- function() {
   with(DT, points(datetime, Sub_metering_2, type = "l", col = "red"))
   with(DT, points(datetime, Sub_metering_3, type = "l", col = "blue"))
   legend("topright",  
-         lty = 1, lwd = 2, col = c("black", "red", "blue"), c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+         lty = 1, lwd = 2, box.lty = 0, 
+         col = c("black", "red", "blue"), c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
   # Bottom right
   with(DT, plot(datetime, Global_reactive_power, type = "l"))
