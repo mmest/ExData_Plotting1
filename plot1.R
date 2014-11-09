@@ -35,13 +35,9 @@ loadData <- function(dataFile = "household_power_consumption.txt") {
   # Set columns names in DT:
   setnames(DT, names(DTnames))
   
-  # Convert to date and time classes, merge in 1 column'datetime' for plotting.
+  # Convert to date and time classes, merge in column 'datetime' for plotting.
   DT[ , datetime := as.POSIXct(paste(Date, Time), format = "%d/%m/%Y %H:%M:%S") ]
   
-  # I you do as below, datetime will store the no.of minutes since origin time. It is a side-effect of the
-  # 'simplyfy' performed by  'mapply'. It may be useful.  
-  # DT[ , datetime := mapply(function(d ,t) { as.POSIXct(paste(d, t), format = "%d/%m/%Y %H:%M:%S") }, Date, Time) ]
-
   return(DT)
 }
 
@@ -50,7 +46,9 @@ loadData <- function(dataFile = "household_power_consumption.txt") {
 plot1 <- function() { 
   DT <- loadData()
   png("plot1.png")
-  hist(DT$Global_active_power, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", col = "red")
+  with( DT, 
+        hist(Global_active_power, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", col = "red") 
+  )
   dev.off()
 }
 
