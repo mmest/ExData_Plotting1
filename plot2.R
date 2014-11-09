@@ -2,7 +2,7 @@
 ### 
 ### N.B. This script sources script plot1.R to load auxiliary function(s) 
 ###      and to check for required package(s). 
-source("Plot1.R")
+source("plot1.R")
 
 # Function 'plot2' generates file 'plot2.png'. 
 

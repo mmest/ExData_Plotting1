@@ -1,4 +1,4 @@
-# To generate the 'plot1.png' file source this file and run 'plot1()'. 
+##### To generate the 'plot1.png' file source this file and run 'plot1()'. 
 
 
 # We use the 'data.table' package. If not avail, script asks for it and does not mess with user's library: 
