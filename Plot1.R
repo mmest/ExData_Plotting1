@@ -47,3 +47,6 @@ loadData <- function(dataFile = "household_power_consumption.txt") {
 
 ### TEST: run when sourced: 
 DT <- loadData()
+png("plot1.png")
+hist(DT$Global_active_power, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", col = "red")
+dev.off()
