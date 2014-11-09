@@ -9,6 +9,8 @@ source("plot1.R")
 plot2 <- function() {
   DT <- loadData()
   png("plot2.png")
-  plot(DT$datetime, DT$Global_active_power, xlab = "", ylab = "Global Active Power (kilowatts)", type = "l")
+  with(DT, 
+       plot(datetime, Global_active_power, xlab = "", ylab = "Global Active Power (kilowatts)", type = "l")
+  )
   dev.off()
 }
