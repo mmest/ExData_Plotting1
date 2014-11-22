@@ -2,3 +2,5 @@ figure
 household_power_consumption.txt
 household_power_consumption_reduced.csv
 reduced.txt
+.RData
+.Rhistory
